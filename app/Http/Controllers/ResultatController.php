@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Simulation as Simulation;
 use App\Models\Recommandation as Recommandation;
 use App\Models\Service as Service;
+use App\Models\contact as Contact;
 
 class ResultatController extends Controller
 {
@@ -57,5 +58,34 @@ class ResultatController extends Controller
         ['simulation' => $simulation, 'service' => $service]);*/
 
         return view('pages/inscription');
+    }
+
+    public function addContact(Request $request)
+    {
+        /*$validatedData = $request->validate([
+            'contact_email' => 'bail|required|email',
+        ]);*/
+
+        /*$request=array(
+            'nom'=>$request->input('contact_nom'),
+            'prenom'=>$request->input('contact_prenom'),
+            'mail'=>$validatedData['contact_email'],
+            'telephone'=>$request->input('contact_telephone')
+        );
+
+        $req = Contact::create($request);
+        $last_id = $req['idcontact'];
+
+        $contact = Contact::where('idcontact',$last_id)->first();
+        $contact->save();*/
+
+        $contact=Contact::create(
+            ['nom' => $request->input('contact_nom'),
+                'prenom' => $request->input('contact_prenom'),
+                'mail'=>$request->input('contact_email'),
+                'telephone'=>$request->input('contact_telephone')
+            ]);
+
+        return view('pages/confirmation');
     }
 }

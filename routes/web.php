@@ -35,4 +35,6 @@ Route::post('saisie', [SaisieController::class, 'store']) -> name ('validation')
 
 Route::get('resultat', [ResultatController::class, 'custom']);
 
-Route::post('resultat', [ResultatController::class, 'store']) -> name ('validationResultat');;
+Route::post('resultat', [ResultatController::class, 'store']) -> name ('validationResultat');
+
+Route::post('inscription',[ResultatController::class, 'addContact'])->name('inscriptionContact');

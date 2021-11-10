@@ -7,5 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class contact extends Model
 {
-    use HasFactory;
+    protected $primaryKey = "idcontact";
+    public $timestamps = true;
+    const UPDATED_AT = null;
+    protected $fillable = ['nom','prenom', 'mail', 'telephone'];
+    //use HasFactory;
 }
