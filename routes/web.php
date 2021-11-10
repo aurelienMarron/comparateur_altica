@@ -15,9 +15,13 @@ use App\Http\Controllers\ResultatController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', [SaisieController::class, 'create']) -> name ('home');
+//Route::get('/', [SaisieController::class, 'create']) -> name ('home');
 
-Route::view('comparateur', 'pages/comparateur') -> name ('comparateur');
+//Route::view('comparateur', 'pages/comparateur') -> name ('comparateur');
+
+Route::view('/','pages/accueil')->name('home');
+
+Route::get('comparateur',[SaisieController::class, 'create'])-> name ('comparateur');
 
 Route::view('confirmation', 'pages/confirmation');
 

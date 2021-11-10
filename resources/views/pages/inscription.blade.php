@@ -2,10 +2,6 @@
 
 @section('content')
 
-    <?php
-    var_dump($simulation);
-
-    ?>
 
     <div class="container">
         <div class="row">
@@ -13,7 +9,7 @@
                 <p>Pour que votre demande soit effectivement traitée merci de renseigner ces quelques champs.
                     Merci de votre compréhension.</p>
             </div>
-            <div class="panel-body container">
+            <div class="panel-body container" id="formulaireInscription">
                 <form class="form" action="{{ route('inscriptionContact') }}" method="POST">
                     @csrf
                     <div class="row">
@@ -32,13 +28,13 @@
                             <input type="text" class="form-control" name="contact_telephone" id="contact_telephone">
                         </div>
                         <div class="form-group col">
-                            <label for="contact_email" class="form-label">Adresse email</label>
+                            <label for="contact_email" class="form-label required">Adresse email</label>
                             <input type="email" class="form-control" name="contact_email" id="contact_email" aria-describedby="emailHelp"
                                    required>
                         </div>
                     </div>
                     <input type="hidden" name="simulation_id" value="{{$simulation}}">
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary" id="buttonInscription">Submit</button>
                 </form>
             </div>
         </div>
