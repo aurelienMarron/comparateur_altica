@@ -57,7 +57,7 @@ class ResultatController extends Controller
        /* return view('pages/confirmation',
         ['simulation' => $simulation, 'service' => $service]);*/
 
-        return view('pages/inscription');
+        return view('pages/inscription',['simulation' => $simulation]);
     }
 
     public function addContact(Request $request)
@@ -85,6 +85,11 @@ class ResultatController extends Controller
                 'mail'=>$request->input('contact_email'),
                 'telephone'=>$request->input('contact_telephone')
             ]);
+
+
+        $simulation=Simulation::where('idsimulation',$request->input('simulation_id'))->update(array('contact'=>$contact->idcontact));
+
+
 
         return view('pages/confirmation');
     }

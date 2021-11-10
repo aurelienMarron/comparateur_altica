@@ -2,6 +2,10 @@
 
 @section('content')
 
+    <?php
+    var_dump($simulation);
+
+    ?>
 
     <div class="container">
         <div class="row">
@@ -33,6 +37,7 @@
                                    required>
                         </div>
                     </div>
+                    <input type="hidden" name="simulation_id" value="{{$simulation}}">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
             </div>
