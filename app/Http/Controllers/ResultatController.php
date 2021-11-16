@@ -87,7 +87,7 @@ class ResultatController extends Controller
             ]);
 
 
-        $simulation=Simulation::where('idsimulation',$request->input('simulation_id'))->update(array('contact'=>$contact->idcontact));
+        Simulation::where('idsimulation',$request->input('simulation_id'))->update(array('contact'=>$contact->idcontact));
 
 
 

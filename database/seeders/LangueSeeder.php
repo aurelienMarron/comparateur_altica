@@ -322,7 +322,7 @@ class LangueSeeder extends Seeder
 
         DB::table('langues')->insert([
             'idlang' => 52 ,
-            'langue' => 'Français Luxembour' ,
+            'langue' => 'Français Luxembourg' ,
             'codelang' => 'FR-lu'
         ]);
 

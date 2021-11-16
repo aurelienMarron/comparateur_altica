@@ -2,7 +2,7 @@
 
 @section('style')
 
-    
+
 
 @endsection
 
@@ -24,7 +24,7 @@
                             <label for="rawtext">Texte à traduire</label>
                             <textarea class="form-control @error('rawtext') is-invalid @enderror" name="rawtext" id="rawtext" rows="10"
                             placeholder="Veuillez entrer votre texte à traduire" required></textarea>
-                        
+
                             @error('rawtext')
                                 <div class="invalid-feedback">{{ $message }}</div>
                             @enderror
@@ -37,18 +37,18 @@
 
                                     <input name="langue_source" id="langue_source" type=text list=langue class="form-control @error('langue_source') is-invalid @enderror" placeholder="Selectionné une langue source" required >
                                     <datalist id=langue >
-                                        
+
                                         @foreach ($langues as $langue)
-                                            <option value="{{ $langue->idlang }} - {{ $langue->langue }} - {{ $langue->codelang }}" > {{ $langue->langue }} - {{ $langue->codelang }} 
+                                            <option value="{{ $langue->idlang }} - {{ $langue->langue }} - {{ $langue->codelang }}" > {{ $langue->langue }} - {{ $langue->codelang }}
                                         @endforeach
                                     </datalist>
-                                    
+
                                     @error('langue_source')
                                         <div class="invalid-feedback">{{ $message }}</div>
                                     @enderror
                                 </div>
                             </div>
-                            
+
                             <div class="form-group col">
                                 <div class="">
                                     <label for="langue_cible">Vers (langue cible)</label>
@@ -123,7 +123,7 @@
                         </div>
 
                         <div class="d-flex justify-content-center">
-                            <button type="submit" class="btn btn-secondary">Comparer les propositions</button>
+                            <button type="submit" class="btn btn-primary">Comparer les propositions</button>
                         </div>
                     </form>
 

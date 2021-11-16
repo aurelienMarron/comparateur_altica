@@ -1,6 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Http;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SaisieController;
 use App\Http\Controllers\ResultatController;

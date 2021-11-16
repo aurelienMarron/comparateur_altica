@@ -31,7 +31,7 @@
 
         <footer class=" d-flex flex-row justify-content-center ">
             <p class="text-center">
-                Plus d'informations sur notre site web : <a href="https://www.altica-traductions.fr">altica-traductions.fr</a> <br>
+                Plus d'informations sur notre site web : <a href="https://www.altica-traductions.fr">www.altica-traductions.fr</a> <br>
                 Suivez-nous également sur nos réseaux sociaux LinkedIn <a href="https://www.linkedin.com/company/altica-traductions-sarl/"><i class="bi bi-linkedin"></i></a> et Facebook <a href="https://www.facebook.com/alticatraductions"><i class="bi bi-facebook"></i></a> ! <br>
                 &copy; Copyright 2021 &middot; <a href="https://altica-traductions.fr/wp1/mentions-legales/">About us</a>
             </p>
