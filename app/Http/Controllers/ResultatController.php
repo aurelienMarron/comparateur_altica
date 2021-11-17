@@ -4,10 +4,12 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Mail;
 use App\Models\Simulation as Simulation;
 use App\Models\Recommandation as Recommandation;
 use App\Models\Service as Service;
 use App\Models\contact as Contact;
+use App\Mail\NewUser as NewUser;
 
 class ResultatController extends Controller
 {
@@ -62,34 +64,26 @@ class ResultatController extends Controller
 
     public function addContact(Request $request)
     {
-        /*$validatedData = $request->validate([
+        $validatedData = $request->validate([
             'contact_email' => 'bail|required|email',
-        ]);*/
-
-        /*$request=array(
-            'nom'=>$request->input('contact_nom'),
-            'prenom'=>$request->input('contact_prenom'),
-            'mail'=>$validatedData['contact_email'],
-            'telephone'=>$request->input('contact_telephone')
-        );
-
-        $req = Contact::create($request);
-        $last_id = $req['idcontact'];
-
-        $contact = Contact::where('idcontact',$last_id)->first();
-        $contact->save();*/
+        ]);
 
         $contact=Contact::create(
             ['nom' => $request->input('contact_nom'),
                 'prenom' => $request->input('contact_prenom'),
-                'mail'=>$request->input('contact_email'),
+                'mail'=>$validatedData['contact_email'],
                 'telephone'=>$request->input('contact_telephone')
             ]);
 
 
+
         Simulation::where('idsimulation',$request->input('simulation_id'))->update(array('contact'=>$contact->idcontact));
 
+        $simulation=Simulation::find($request->input('simulation_id'));
 
+        Mail::to('aurelien.marron@le-campus-numerique.fr')
+            ->send(new NewUser($contact,$simulation))
+        ;
 
         return view('pages/confirmation');
     }

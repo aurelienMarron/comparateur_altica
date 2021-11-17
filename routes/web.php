@@ -42,3 +42,5 @@ Route::get('resultat', [ResultatController::class, 'custom']);
 Route::post('resultat', [ResultatController::class, 'store']) -> name ('validationResultat');
 
 Route::post('inscription',[ResultatController::class, 'addContact'])->name('inscriptionContact');
+
+//Route::get('Mail/Send','ResultatController@Send');
