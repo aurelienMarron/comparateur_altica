@@ -15,7 +15,7 @@
     </head>
     <body class="d-flex flex-column justify-content-between m-2">
         <header class="">
-            <h5 class="text-center">Bienvenue dans le tout premier comparateur de niveau de services de traduction !</h5>
+            <h5 class="text-center">Bienvenue voici le tout premier comparateur de niveaux de services de traduction !</h5>
         </header>
 
         <div class="flex-fill">

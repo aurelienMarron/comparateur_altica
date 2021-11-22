@@ -46,8 +46,9 @@ html, body {
   }
 
 #lien{
-    color:#EB916D;
+    background-color:#1B609E;
     font-size:2rem;
+    border-radius: 10px;
 }
 
 #lien:hover{

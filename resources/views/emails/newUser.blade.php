@@ -25,8 +25,8 @@ $langue_cible= Langue::find($simulation->langue_cible);
 <ul>
     <li><strong>Identifiant de la simulation</strong> : {{$simulation->idsimulation}}</li>
     <li><strong>Nombre de mots à traduire</strong> : {{$simulation->nbmots}}</li>
-    <li><strong>Qualité de traduction demandé</strong> : {{$qualite->besoinclient}}</li>
-    <li><strong>Relecture demandé</strong> : @if($simulation->bat===1) Oui
+    <li><strong>Qualité de traduction demandée</strong> : {{$qualite->besoinclient}}</li>
+    <li><strong>Relecture demandée</strong> ? @if($simulation->bat===1) Oui
     @else Non</li>@endif
     <li><strong>Langue source</strong> : {{$langue_source->langue}}</li>
     <li><strong>Langue cible</strong> : {{$langue_cible->langue}}</li>
