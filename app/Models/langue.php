@@ -12,7 +12,7 @@ class langue extends Model
     protected $primaryKey = "idlang";
     public $timestamps = true;
     const UPDATED_AT = null;
-    protected $fillable = ['langue', 'codelang'];
+    protected $fillable = ['idlang','langue', 'codelang'];
 
     /*public function simulations(){
         return $this->belongsToMany(simulation::class);

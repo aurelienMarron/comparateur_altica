@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!--<title>{{ page_title($pageTitle ?? null) }}</title>-->
+
         <title>Le comparateur de niveaux de services de traduction</title>
 
         <link href="{{ asset('css/styles.css') }}" rel="stylesheet">

@@ -14,10 +14,10 @@ class SaisieController extends Controller
         $langues = Langue::all();
         return view('pages/comparateur', compact('langues'));
     }
- 
+
     public function store(Request $request)
     {
-        
+
         $validatedData = $request->validate([
             'rawtext' => 'bail|required',
             'langue_source' => 'bail|required',
@@ -25,8 +25,10 @@ class SaisieController extends Controller
             'qualité' => 'bail|required|min:0|max:4',
         ]);
 
-        $lang_source = explode(" - ",$validatedData["langue_source"])[0];
-        $lang_cible = explode(" - ",$validatedData["langue_cible"])[0];
+        $lang_source=Langue::where('langue',$validatedData["langue_source"])->value('idlang');
+        //$lang_source = explode(" - ",$validatedData["langue_source"])[0];
+        //$lang_cible = explode(" - ",$validatedData["langue_cible"])[0];
+        $lang_cible=Langue::where('langue',$validatedData["langue_cible"])->value('idlang');
 
         if (isset($request['BAT'])) {
             $bat = 1;
@@ -36,7 +38,7 @@ class SaisieController extends Controller
 
         $request = array(
             'nbmots' => str_word_count($validatedData["rawtext"]),
-            'qualite' => $validatedData["qualité"], 
+            'qualite' => $validatedData["qualité"],
             'bat' => $bat,
             'langue_source' => $lang_source,
             'langue_cible' => $lang_cible,
@@ -59,7 +61,7 @@ class SaisieController extends Controller
         );
     }
 
-    public function put($file_name,$content) 
+    public function put($file_name,$content)
     {
         try {
             Storage::disk('local')->put($file_name.'.txt', $content);

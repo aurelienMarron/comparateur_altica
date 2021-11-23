@@ -39,7 +39,7 @@
                                     <datalist id=langue >
 
                                         @foreach ($langues as $langue)
-                                            <option value="{{ $langue->idlang }} - {{ $langue->langue }} - {{ $langue->codelang }}" > {{ $langue->langue }} - {{ $langue->codelang }}
+                                            <option value="{{ $langue->langue }}" >
                                         @endforeach
                                     </datalist>
 
@@ -61,27 +61,13 @@
                             </div>
                         </div>
 
-                        <!--
-
-                        <div class="form-group">
-                            <label for="qualité">Qualité de traduction souhaitée</label>
-                            <input name="qualité" type="range" min="1" max="4" step="1" value="2" list="qualite" id="qualité" class="form-control @error('qualité') is-invalid @enderror" required>
-                            <datalist>
-                                <option value="1" label="Sens général du texte">Sens général du texte</option>
-                                <option value="2" label="Usage interne">Usage interne</option>
-                                <option value="3" label="Diffusion externe">Diffusion externe</option>
-                                <option value="4" label="Publication/image société">Publication/image société</option>
-                            </datalist>
-
-                            @error('qualité')
-                                <div class="invalid-feedback">{{ $message }}</div>
-                            @enderror
-                        </div>
-
-                        -->
-
                         <div class="form-group m-2 ">
                             <p>Qualité de traduction souhaitée : </p>
+                            <label for="customRange2" class="form-label">Qualité de traduction souhaitée :</label>
+                            <input  type="range"  min="1" max="4" name="qualité" onchange="displayValue(this.value)">
+                           <!-- <output for="out" id="sliderQualite"></output>-->
+                            <input type="text" id="sliderQualite">
+                            <!--
                             <div class="form-group d-flex col flex-column m-3 align-items-start">
                                 <div>
                                     <input type="radio" id="Sens général du texte" name="qualité" value="1">
@@ -106,7 +92,7 @@
                                 @error('qualité')
                                     <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                            </div>
+                            </div>-->
                         </div>
 
                         <div class="form-group m-2">
@@ -132,5 +118,17 @@
         </div>
     </div>
 </div>
-
+<script type="text/javascript">
+    function displayValue(val){
+        if(val==1){
+            document.getElementById('sliderQualite').value='Sens général du texte';
+        }else if(val==2){
+            document.getElementById('sliderQualite').value='Usage interne';
+        }else if(val==3){
+            document.getElementById('sliderQualite').value='Diffusion externe';
+        }else if(val==4){
+            document.getElementById('sliderQualite').value='Publication/image société';
+        }
+    }
+    </script>
 @endsection
