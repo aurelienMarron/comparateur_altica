@@ -63,7 +63,23 @@ html, body {
     color:white;
 }
 
+#rangeQualite{
+  color:blue;
+    width:90%;
+    margin-left: 5%;
+}
 
+#sliderQualite{
+    margin-left: 30%;
+    width:40%;
+    text-align:center;
+    background-color: #007bff;
+    color:white;
+}
+
+#explication_inscritpion{
+    margin-top:5%;
+}
 
 
 

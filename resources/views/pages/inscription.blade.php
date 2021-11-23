@@ -5,9 +5,9 @@
 
     <div class="container">
         <div class="row">
-            <div class="text-center">
-                <p>Pour que votre demande soit effectivement traitée merci de renseigner ces quelques champs.
-                    Merci de votre compréhension.</p>
+            <div class="text-center" id="explication_inscritpion">
+                <h5>Pour que votre demande soit effectivement traitée merci de renseigner ces quelques champs.
+                    Merci de votre compréhension.</h5>
             </div>
             <div class="panel-body container" id="formulaireInscription">
                 <form class="form" action="{{ route('inscriptionContact') }}" method="POST">
@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="simulation_id" value="{{$simulation}}">
-                    <button type="submit" class="btn btn-primary" id="buttonInscription">Submit</button>
+                    <button type="submit" class="btn btn-warning" id="buttonInscription">Envoyer</button>
                 </form>
             </div>
         </div>
