@@ -46,13 +46,12 @@ html, body {
   }
 
 #lien{
-    background-color:#1B609E;
     font-size:2rem;
     border-radius: 10px;
 }
 
 #lien:hover{
-    color:#C17305;
+    color:#08084E;
 }
 
 

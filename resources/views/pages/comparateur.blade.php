@@ -23,7 +23,7 @@
                         <div class="form-group">
                             <label for="rawtext">Texte à traduire</label>
                             <textarea class="form-control @error('rawtext') is-invalid @enderror" name="rawtext" id="rawtext" rows="10"
-                            placeholder="Veuillez entrer votre texte à traduire" required></textarea>
+                            placeholder="Je saisis mon texte à traduire" required></textarea>
 
                             @error('rawtext')
                                 <div class="invalid-feedback">{{ $message }}</div>
@@ -35,7 +35,7 @@
                                 <div class="">
                                     <label for="langue_source">Depuis (langue source)</label>
 
-                                    <input name="langue_source" id="langue_source" type=text list=langue class="form-control @error('langue_source') is-invalid @enderror" placeholder="Selectionné une langue source" required >
+                                    <input name="langue_source" id="langue_source" type=text list=langue class="form-control @error('langue_source') is-invalid @enderror" placeholder="Je sélectionne une langue source" required >
                                     <datalist id=langue >
 
                                         @foreach ($langues as $langue)
@@ -52,7 +52,7 @@
                             <div class="form-group col">
                                 <div class="">
                                     <label for="langue_cible">Vers (langue cible)</label>
-                                    <input name="langue_cible" id="langue_cible" type=text list=langue class="form-control @error('langue_cible') is-invalid @enderror" placeholder="Selectionné une langue cible" required >
+                                    <input name="langue_cible" id="langue_cible" type=text list=langue class="form-control @error('langue_cible') is-invalid @enderror" placeholder="Je sélectionne une langue cible" required >
 
                                     @error('langue_cible')
                                         <div class="invalid-feedback">{{ $message }}</div>
