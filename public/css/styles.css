@@ -64,18 +64,17 @@ html, body {
 }
 
 #rangeQualite{
-  color:blue;
     width:90%;
     margin-left: 5%;
 }
 
 #sliderQualite{
-    margin-left: 30%;
-    width:40%;
+    margin-left: 10%;
+    width:70%;
     text-align:center;
-    background-color: #007bff;
-    color:white;
-    border:0px;
+    background-color: white;
+    color:#007bff;
+    border:0;
     border-radius: 5px;
 }
 
@@ -83,5 +82,29 @@ html, body {
     margin-top:5%;
 }
 
+#langue_cible {
+    margin-top: 20%;
+}
+
+@media screen and (min-width:400px)and(max-width: 639px) {
+    #langue_cible {
+        margin-top: 16%;
+    }
+}
+
+@media screen and (min-width:640px){
+#langue_cible {
+    margin-top: 0;
+}
+}
 
 
+@media screen and (device-width:360px) and (device-height: 640px)and (-webkit-device-pixel-ratio:3) {
+    #langue_cible {
+        margin-top: 0;
+    }
+}
+
+#tickmarcks{
+    height:80%;
+}

@@ -34,7 +34,7 @@
                         </div>
                     </div>
                     <input type="hidden" name="simulation_id" value="{{$simulation}}">
-                    <button type="submit" class="btn btn-warning" id="buttonInscription">Envoyer</button>
+                    <button type="submit" class="btn btn-primary" id="buttonInscription">Envoyer</button>
                 </form>
             </div>
         </div>

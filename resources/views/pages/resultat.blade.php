@@ -40,7 +40,7 @@
                 ?>
             </div>
 
-            <ul class="list-group d-flex flex-row justify-content-center align-items-stretch">
+            <ul class="list-group d-flex flex-md-row justify-content-center align-items-stretch">
                 @foreach ($service as $serv)
                     <form class="form" action="{{ route('validationResultat') }}" method="POST">
                         @csrf
