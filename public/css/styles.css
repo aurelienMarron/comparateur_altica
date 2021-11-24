@@ -1,110 +1,113 @@
 html, body {
     height: 100%;
-  }
+}
 
-  #wrap {
+#wrap {
     min-height: 100%;
-  }
+}
 
-  #main {
-    overflow:auto;
-    padding-bottom:150px; /* this needs to be bigger than footer height*/
-  }
+#main {
+    overflow: auto;
+    padding-bottom: 150px; /* this needs to be bigger than footer height*/
+}
 
-  .footer {
+.footer {
     position: relative;
     margin-top: -150px; /* negative value of footer height */
     height: 150px;
-    clear:both;
-    padding-top:20px;
-  }
+    clear: both;
+    padding-top: 20px;
+}
 
-  #formulaireInscription{
-      margin-top:100px;
-  }
+#formulaireInscription {
+    margin-top: 100px;
+}
 
-  .required:after{
-      content:'*';
-      color:red;
-      padding-left: 5px;
-  }
+.required:after {
+    content: '*';
+    color: red;
+    padding-left: 5px;
+}
 
-  #buttonInscription{
-      margin-top:20px;
-  }
+#buttonInscription {
+    margin-top: 20px;
+}
 
-  #textePresentation{
-      margin-top:50px;
-  }
+#textePresentation {
+    margin-top: 50px;
+}
 
-  #lienComparateur{
-      margin-top:50px;
-  }
+#lienComparateur {
+    margin-top: 50px;
+}
 
-  #logo{
-      margin-top:50px;
-  }
+#logo {
+    margin-top: 50px;
+}
 
-#lien{
-    font-size:2rem;
+#lien {
+    font-size: 2rem;
     border-radius: 10px;
 }
 
-#lien:hover{
-    color:#08084E;
+#lien:hover {
+    color: #08084E;
 }
 
-#conseil{
-    color:#ffc107;
+#conseil {
+    color: #ffc107;
 }
 
-#bestChoice{
+#bestChoice {
     background-color: #070A4B;
-    color:white;
+    color: white;
 }
 
-#rangeQualite{
-    width:90%;
+#rangeQualite {
+    width: 90%;
     margin-left: 5%;
 }
 
-#sliderQualite{
+#sliderQualite {
     margin-left: 10%;
-    width:70%;
-    text-align:center;
+    width: 70%;
+    text-align: center;
     background-color: white;
-    color:#007bff;
-    border:0;
+    color: #007bff;
+    border: 0;
     border-radius: 5px;
 }
 
-#explication_inscritpion{
-    margin-top:5%;
+#explication_inscritpion {
+    margin-top: 5%;
 }
 
 #langue_cible {
     margin-top: 20%;
 }
 
-@media screen and (min-width:400px)and(max-width: 639px) {
+@media screen and (min-width: 400px)and(max-width: 639px) {
     #langue_cible {
         margin-top: 16%;
     }
 }
 
-@media screen and (min-width:640px){
-#langue_cible {
-    margin-top: 0;
-}
-}
-
-
-@media screen and (device-width:360px) and (device-height: 640px)and (-webkit-device-pixel-ratio:3) {
+@media screen and (min-width: 640px) {
     #langue_cible {
         margin-top: 0;
     }
 }
 
-#tickmarcks{
-    height:80%;
+@media screen and (device-width: 360px) and (device-height: 640px)and (-webkit-device-pixel-ratio: 3) {
+    #langue_cible {
+        margin-top: 0;
+    }
+}
+
+
+@media screen and (min-width: 1000px) {
+    #rangeQualite {
+        width: 250%;
+        margin-left: 5%;
+    }
 }

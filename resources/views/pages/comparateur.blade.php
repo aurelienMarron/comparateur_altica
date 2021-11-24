@@ -67,25 +67,21 @@
                             </div>
 
                             <div class="form-group m-2 ">
-                                <label for="customRange2" class="form-label">Qualité de traduction souhaitée :</label>
-                                <!--<div class="container">
-                                    <div class="row jstify-content-md-center">
-                                    <div class="col-lg-3" id="qualite1">Sens général du texte</div>
-                                    <div class="col-lg-3" id="qualite2">Usage interne</div>
-                                    <div class="col-lg-3" id="qualite3">Diffusion externe</div>
-                                    <div class="col-lg-3" id="qualite4">Publication/image société</div>
-                                    </div>
-                                </div>-->
-                                <input type="range" min="1" max="4" name="qualité" list="tickmarcks" id="rangeQualite"
+                                <label for="customRange2" class="form-label">Qualité de traduction souhaitée :
+                                    <div class="container">
+                                        <div class="d-flex flex-column flex-sm-row">
+                                <input  type="range" class="col-9" min="1" max="4" name="qualité" list="tickmarcks" id="rangeQualite"
                                        oninput="displayValue(this.value)">
-                                <input type="text" id="sliderQualite" value="Diffusion externe">
+                                <input type="text" id="sliderQualite" class="col-3"  value="Diffusion externe">
                                 <datalist id="tickmarcks">
                                     <option value="1" label="Sens général du texte"></option>
                                     <option value="2" label="Usage interne"></option>
                                     <option value="3" label="Diffusion externe"></option>
                                     <option value="4" label="Publication/image société"></option>
                                 </datalist>
-
+                                        </div>
+                                    </div>
+                                </label>
                             <!--
                             <div class="form-group d-flex col flex-column m-3 align-items-start">
                                 <div>
@@ -141,13 +137,13 @@
     </div>
     <script type="text/javascript">
         function displayValue(val) {
-            if (val == 1) {
+            if (val === "1") {
                 document.getElementById('sliderQualite').value = 'Sens général du texte';
-            } else if (val == 2) {
+            } else if (val === "2") {
                 document.getElementById('sliderQualite').value = 'Usage interne';
-            } else if (val == 3) {
+            } else if (val === "3") {
                 document.getElementById('sliderQualite').value = 'Diffusion externe';
-            } else if (val == 4) {
+            } else if (val === "4") {
                 document.getElementById('sliderQualite').value = 'Publication/image société';
             }
         }
