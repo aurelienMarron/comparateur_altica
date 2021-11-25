@@ -35,6 +35,7 @@
                         Nous avons trouvé ' . $size . ' options correspondant à votre demande. <br>
                         Nous vous en recommandons une. <br>
                         Vous pouvez cependant choisir de prioriser votre budget ou bien la qualité. <br>
+                        A vous de faire le choix qui répond le plus à vos critères. <br>
                     </p>';
                 }
                 ?>

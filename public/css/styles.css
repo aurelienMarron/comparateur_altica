@@ -65,12 +65,12 @@ html, body {
 
 #rangeQualite {
     width: 120%;
-    margin-left: 0;
+    margin-left: -10%;
 }
 
 #sliderQualite {
-    margin-left: 10%;
-    width: 90%;
+    margin-left: 0;
+    width: 100%;
     text-align: center;
     background-color: white;
     color: #007bff;
@@ -96,6 +96,13 @@ html, body {
     #langue_cible {
         margin-top: 0;
     }
+    #rangeQualite {
+        width: 60%;
+        margin-left: 5%;
+    }
+    #sliderQualite {
+        width:50%;
+    }
 }
 
 @media screen and (device-width: 360px) and (device-height: 640px)and (-webkit-device-pixel-ratio: 3) {
@@ -107,9 +114,17 @@ html, body {
 
 @media screen and (min-width: 1200px) {
     #rangeQualite {
-        width: 250%;
+        width: 60%;
         margin-left: 5%;
+    }
+    #sliderQualite {
+        width:40%;
     }
 }
 
+@media screen and (max-width: 300px) {
+#sliderQualite{
+    font-size:10px;
+}
+}
 

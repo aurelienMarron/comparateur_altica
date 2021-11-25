@@ -13,7 +13,7 @@
             <div class="panel panel-info">
                 <div class="card">
                     <div class="panel-heading">
-                        <h3>Comparateur</h3>
+                        <h3 class="text-center">Comparateur</h3>
                     </div>
 
                     <div class="panel-body container">
@@ -67,21 +67,23 @@
                             </div>
 
                             <div class="form-group m-2 ">
-                                <label for="customRange2" class="form-label">Qualité de traduction souhaitée :
+                                <label for="customRange2" class="form-label">Qualité de traduction souhaitée : </label>
                                     <div class="container">
                                         <div class="d-flex flex-column flex-sm-row">
-                                <input  type="range" class="col-9" min="1" max="4" name="qualité" list="tickmarcks" id="rangeQualite"
-                                       oninput="displayValue(this.value)">
-                                <input type="text" id="sliderQualite" class="col-3"  value="Diffusion externe">
-                                <datalist id="tickmarcks">
-                                    <option value="1" label="Sens général du texte"></option>
-                                    <option value="2" label="Usage interne"></option>
-                                    <option value="3" label="Diffusion externe"></option>
-                                    <option value="4" label="Publication/image société"></option>
-                                </datalist>
+                                            <input type="range" class="col-9" min="1" max="4" name="qualité"
+                                                   list="tickmarcks" id="rangeQualite"
+                                                   oninput="displayValue(this.value)">
+                                            <input type="text" id="sliderQualite" class="col-3"
+                                                   value="Diffusion externe">
+                                            <datalist id="tickmarcks">
+                                                <option value="1" label="Sens général du texte"></option>
+                                                <option value="2" label="Usage interne"></option>
+                                                <option value="3" label="Diffusion externe"></option>
+                                                <option value="4" label="Publication/image société"></option>
+                                            </datalist>
                                         </div>
                                     </div>
-                                </label>
+
                             <!--
                             <div class="form-group d-flex col flex-column m-3 align-items-start">
                                 <div>
@@ -102,12 +104,12 @@
                                 <div>
                                     <input type="radio" id="Publication/image société" name="qualité" value="4">
                                     <label for="Publication/image société">Publication/image société</label>
-                                </div>
+                                </div>-->
 
                                 @error('qualité')
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
-                                </div>-->
+                                </div>
                             </div>
 
                             <div class="form-group m-2">
