@@ -12,10 +12,10 @@
         </div>
     @endif
 
-    <div class="container">
+    <div class="panel-body container">
         <div class="row">
             <div class="text-center" id="explication_inscritpion">
-                <h5>Pour que votre demande soit effectivement traitée merci de renseigner ces quelques champs.
+                <h5>Pour que votre demande soit effectivement traitée merci de renseigner ces quelques champs. <br>
                     Merci de votre compréhension.</h5>
             </div>
             <div class="panel-body container" id="formulaireInscription">
@@ -48,8 +48,13 @@
                         </div>
                     </div>
                     <input type="hidden" name="simulation_id" value="{{$simulation}}">
+                    <div class="d-flex justify-content-center">
                     <button type="submit" class="btn btn-primary" id="buttonInscription">Envoyer</button>
+                    </div>
                 </form>
+                <p class="d-flex text-secondary">
+                    <span style="color:red">*</span> Champs obligatoire
+                </p>
             </div>
         </div>
     </div>

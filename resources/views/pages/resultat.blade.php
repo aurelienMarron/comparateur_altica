@@ -32,11 +32,9 @@
                 } else {
                     echo '<p class="text-center">
                         Merci pour les informations fournies. <br>
-                        Nous avons trouvé ' . $size . ' options <u>correspondant</u> à votre demande. <br>
-                        Nous vous en recommandons une. <br>
-                        <span style="color:green">Nous vous recommandons celle qui pour nous représente le meilleur rapport qualité/prix.</span> <br>
-                        Vous pouvez cependant choisir de prioriser votre budget ou bien la qualité. <br>
-                        <span style="color:green">A vous de faire le choix qui répond le mieux à vos critères (besoins ?). </span><br>
+                        Nous avons trouvé ' . $size . ' options correspondant à votre demande. <br>
+                        Nous vous recommandons celle qui représente le meilleur rapport qualité/prix.<br>
+                        Vous pouvez cependant choisir de prioriser plus votre budget ou bien plus la qualité. <br>
                     </p>';
                 }
                 ?>
