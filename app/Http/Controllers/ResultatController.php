@@ -15,22 +15,22 @@ class ResultatController extends Controller
 {
     public function custom(Request $request)
     {
-        $simulation = Simulation::where('idsimulation',$request->last_id)->get();
+        $simulation = Simulation::where('idsimulation', $request->last_id)->get();
 
         $idqualite = $simulation[0]->qualite;
-        $services = Recommandation::where('idqualite',$idqualite)->get();
+        $services = Recommandation::where('idqualite', $idqualite)->get();
         //$services = DB::table('recommandations')->where('idqualite',$idqualite)->value('idservice');
         $service = array();
 
         foreach ($services as $val) {
             array_push($service,
-                DB::table('services')->where('idservice',$val->idservice)->get());
+                DB::table('services')->where('idservice', $val->idservice)->get());
         }
 
         $size = sizeof($service);
 
         return view('pages/resultat',
-        ['simulation' => $simulation,'service' => $service,'size' => $size]);
+            ['simulation' => $simulation, 'service' => $service, 'size' => $size]);
     }
 
     public function store(Request $request)
@@ -43,47 +43,49 @@ class ResultatController extends Controller
         $simulation = $validatedData["idsimulation"];
         $service = $validatedData["idservice"];
 
-        $serv = Service::where('idservice',$service)->get();
+        $serv = Service::where('idservice', $service)->get();
 
-        $simu = Simulation::where('idsimulation',$simulation)->first();
+        $simu = Simulation::where('idsimulation', $simulation)->first();
         $nbmots = $simu->nbmots;
 
         $simu->idservice = $validatedData["idservice"];
-        $simu->coutmin = $serv[0]->coutmin*$nbmots;
-        $simu->coutmax = $serv[0]->coutmax*$nbmots;
-        $simu->delaimin = ceil($serv[0]->delaimin/2000 *$nbmots/7);
-        $simu->delaimax = ceil($serv[0]->delaimax/2000 *$nbmots/7);
+        $simu->coutmin = $serv[0]->coutmin * $nbmots;
+        $simu->coutmax = $serv[0]->coutmax * $nbmots;
+        $simu->delaimin = ceil($serv[0]->delaimin / 2000 * $nbmots / 7);
+        $simu->delaimax = ceil($serv[0]->delaimax / 2000 * $nbmots / 7);
 
         $simu->save();
 
-       /* return view('pages/confirmation',
-        ['simulation' => $simulation, 'service' => $service]);*/
+        /* return view('pages/confirmation',
+         ['simulation' => $simulation, 'service' => $service]);*/
 
-        return view('pages/inscription',['simulation' => $simulation]);
+        return view('pages/inscription', ['simulation' => $simulation]);
     }
 
     public function addContact(Request $request)
     {
         $validatedData = $request->validate([
+            'contact_nom' => 'bail|alpha',
+            'contact_prenom' => 'bail|alpha',
             'contact_email' => 'bail|required|email',
+            'contact_telephone' => 'bail|numeric',
         ]);
 
-        $contact=Contact::create(
-            ['nom' => $request->input('contact_nom'),
-                'prenom' => $request->input('contact_prenom'),
-                'mail'=>$validatedData['contact_email'],
-                'telephone'=>$request->input('contact_telephone')
+        $contact = Contact::create(
+            [
+                'nom' => $validatedData['contact_nom'],
+                'prenom' => $validatedData['contact_prenom'],
+                'mail' => $validatedData['contact_email'],
+                'telephone' =>$validatedData['contact_telephone']
             ]);
 
 
+        Simulation::where('idsimulation', $request->input('simulation_id'))->update(array('contact' => $contact->idcontact));
 
-        Simulation::where('idsimulation',$request->input('simulation_id'))->update(array('contact'=>$contact->idcontact));
-
-        $simulation=Simulation::find($request->input('simulation_id'));
+        $simulation = Simulation::find($request->input('simulation_id'));
 
         Mail::to('aurelien.marron@le-campus-numerique.fr')
-            ->send(new NewUser($contact,$simulation))
-        ;
+            ->send(new NewUser($contact, $simulation));
 
         return view('pages/confirmation');
     }

@@ -2,6 +2,15 @@
 
 @section('content')
 
+    @if($errors->any())
+        <div class="" alert alert-danger>
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
 
     <div class="container">
         <div class="row">
@@ -15,21 +24,26 @@
                     <div class="row">
                         <div class="form-group col">
                             <label for="contact_prenom">Prénom</label>
-                            <input type="text" class="form-control" name="contact_prenom" id="contact_prenom">
+                            <input type="text" class="form-control @error('contact_prenom') is-invalid @enderror"
+                                   name="contact_prenom" id="contact_prenom" value="{{ old('contact_prenom') }}">
                         </div>
                         <div class="form-group col">
                             <label for="contact_nom">Nom</label>
-                            <input type="text" class="form-control" name="contact_nom" id="contact_nom">
+                            <input type="text" class="form-control @error('contact_nom') is-invalid @enderror"
+                                   name="contact_nom" id="contact_nom" value="{{ old('contact_nom') }}">
                         </div>
                     </div>
                     <div class="row">
                         <div class="form-group col">
-                            <label for="contact_telephone" class="form-label">Téléphone</label>
-                            <input type="text" class="form-control" name="contact_telephone" id="contact_telephone">
+                            <label for="contact_telephone" class="form-label ">Téléphone</label>
+                            <input type="text" class="form-control @error('contact_telephone') is-invalid @enderror"
+                                   name="contact_telephone" id="contact_telephone" value="{{ old('contact_telephone') }}">
                         </div>
                         <div class="form-group col">
-                            <label for="contact_email" class="form-label required">Adresse email</label>
-                            <input type="email" class="form-control" name="contact_email" id="contact_email" aria-describedby="emailHelp"
+                            <label for="contact_email" class="form-label required ">Adresse email</label>
+                            <input type="email" class="form-control @error('contact_email') is-invalid @enderror"
+                                   name="contact_email" id="contact_email" value="{{ old('contact_email') }}"
+                                   aria-describedby="emailHelp"
                                    required>
                         </div>
                     </div>
