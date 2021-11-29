@@ -77,7 +77,7 @@
                             </div>
 
                             <div class="form-group m-2 ">
-                                <label for="customRange2" class="form-label">Qualité de traduction souhaitée : </label>
+                                <label for="customRange2" class="form-label">Choisissez la qualité de traduction souhaitée en déplaçant le curseur : </label>
                                     <div class="container">
                                         <div class="d-flex flex-column flex-sm-row">
                                             <input type="range" class="col-9" min="1" max="4" name="qualité"
