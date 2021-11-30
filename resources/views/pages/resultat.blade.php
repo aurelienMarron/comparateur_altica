@@ -95,7 +95,7 @@
                             }
                         }
                         ?>
-                        <div class="rounded-pill bg-primary m-3 p-5">
+                        <div id="arrondi" class="rounded-pill bg-primary m-1 p-3">
                             <h3 class="mb-2 mt-2 font-weight-bolder text-white text-center">{{ $serv[0]->nomservice }} </h3>
                             <br>
                             <p class="font-weight-bolder text-white text-center">{{ $serv[0]->detail }}</p>
