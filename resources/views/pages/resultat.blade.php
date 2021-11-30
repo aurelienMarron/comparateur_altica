@@ -96,18 +96,17 @@
                         }
                         ?>
                         <div class="rounded-pill bg-primary m-3 p-5">
-                            <h3 class="mb-2 mt-2 font-weight-bolder text-white text-center"">{{ $serv[0]->nomservice }}
-                            : </h3>
+                            <h3 class="mb-2 mt-2 font-weight-bolder text-white text-center">{{ $serv[0]->nomservice }} </h3>
                             <br>
-                            <p class="font-weight-bolder text-white text-center"">{{ $serv[0]->detail }}</p>
+                            <p class="font-weight-bolder text-white text-center">{{ $serv[0]->detail }}</p>
                         </div>
                         <br>
-                        <span class="small ">Tarif estimé :</span>
+                        <span class="small ">Tarif estimé par mot :</span>
                         <h5 class="font-weight-bolder ">
                             <!--entre {{ $serv[0]->coutmin * $simulation[0]->nbmots }}
                             et {{ $serv[0]->coutmax * $simulation[0]->nbmots }}€ HT par mot</h5>-->
-                                entre {{ $serv[0]->coutmin  }}
-                                et {{ $serv[0]->coutmax  }}€ HT par mot</h5>
+                                entre {{ number_format($serv[0]->coutmin,2,',','')  }}
+                                et {{ number_format($serv[0]->coutmax,2,',','' ) }}€ HT</h5>
                         <br>
                         <span class="small ">Délai estimé de livraison :</span>
                         <?php
