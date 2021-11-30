@@ -94,7 +94,7 @@ class ServiceSeeder extends Seeder
         DB::table('services')->insert([
             'idservice' => 8 ,
             'degrequalite' => 99,
-            'nomservice' => 'Traduction + relecture* + BAT',
+            'nomservice' => 'Traduction + relecture* + vérification après mise en page',
             'detail' => 'traduction + relecture par deux linguistes distincts + nouvelle vérification par un linguiste après mise en page' ,
             'coutmin' => 0.1 ,
             'coutmax' => 0.16 ,
