@@ -7,14 +7,20 @@
     //var_dump($service);
     $arrayQualite = [];
     $arrayPrixMax = [];
+    $arrayPrixMin = [];
     foreach ($service as $serv) {
         array_push($arrayQualite, $serv[0]->degrequalite);
-        array_push($arrayPrixMax, $serv[0]->coutmax);
+        array_push($arrayPrixMax, strval($serv[0]->coutmax));
+        array_push($arrayPrixMin, $serv[0]->coutmin);
     }
     $qualiteMax = max($arrayQualite);
     $prixMax = max($arrayPrixMax);
+    $prixMin = strval(min($arrayPrixMax));
+    $prixMinMin = min($arrayPrixMin);
     $counts = array_count_values($arrayQualite);
-    $nombredefois = $counts[$qualiteMax];
+    $countsPrixMin = array_count_values($arrayPrixMax);
+    $nombredefoisqualiteMax = $counts[$qualiteMax];
+    $nombredefoisPrixMin = $countsPrixMin[$prixMin];
 
     ?>
 
@@ -47,7 +53,8 @@
 
                         <input type="hidden" name="idsimulation" value="{{ $simulation[0]->idsimulation }}">
                         <?php
-                        if ($nombredefois == 1) {
+                        if($simulation[0]->qualite===3||$simulation[0]->qualite===4){
+                        if ($nombredefoisqualiteMax == 1) {
                             if ($serv[0]->degrequalite === $qualiteMax) {
                                 echo '<div id="bestChoice"
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
@@ -56,14 +63,35 @@
                                 echo '<div
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
                             }
-                        } elseif ($nombredefois > 1) {
-                            if ($serv[0]->degrequalite === $qualiteMax && $serv[0]->coutmax !== $prixMax) {
+                        } elseif ($nombredefoisqualiteMax > 1) {
+                            if ($serv[0]->degrequalite === $qualiteMax && $serv[0]->coutmax != $prixMax) {
                                 echo '<div id="bestChoice"
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
                                 <h5 id="conseil">Notre recommandation !</h5>';
                             } else {
                                 echo '<div
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
+                            }
+                        }
+                        }elseif($simulation[0]->qualite===1||$simulation[0]->qualite===2){
+                            if($nombredefoisPrixMin==1){
+                                if($serv[0]->coutmax==$prixMin){
+                                    echo '<div id="bestChoice"
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
+                                <h5 id="conseil">Notre recommandation !</h5>';
+                                }else {
+                                    echo '<div
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
+                                }
+                            }else{
+                                if($serv[0]->coutmax==$prixMin && $serv[0]->coutmin==$prixMinMin){
+                                    echo '<div id="bestChoice"
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
+                                <h5 id="conseil">Notre recommandation !</h5>';
+                                }else {
+                                    echo '<div
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
+                                }
                             }
                         }
                         ?>
