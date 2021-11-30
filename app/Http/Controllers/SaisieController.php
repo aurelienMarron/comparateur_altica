@@ -19,7 +19,7 @@ class SaisieController extends Controller
     {
 
         $validatedData = $request->validate([
-            'rawtext' => 'bail|required',
+            'nbmots' => 'bail|numeric|required',
             'langue_source' => 'bail|required',
             'langue_cible' => 'bail|required',
             'qualité' => 'bail|required|min:0|max:4',
@@ -37,7 +37,7 @@ class SaisieController extends Controller
         }
 
         $request = array(
-            'nbmots' => str_word_count($validatedData["rawtext"]),
+            'nbmots' => $validatedData["nbmots"],
             'qualite' => $validatedData["qualité"],
             'bat' => $bat,
             'langue_source' => $lang_source,
@@ -49,7 +49,7 @@ class SaisieController extends Controller
         $req = Simulation::create($request);
         $last_id = $req['idsimulation'];
 
-        SaisieController::put($last_id,$validatedData["rawtext"]);
+        SaisieController::put($last_id,$validatedData["nbmots"]);
 
         $simu = Simulation::where('idsimulation',$last_id)->first();
         $simu->chemin = $last_id.'.txt';

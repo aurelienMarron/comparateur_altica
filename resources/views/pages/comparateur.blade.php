@@ -49,7 +49,7 @@
                                     <div class="col-sm-2">
                                         <input name="nbmots" id="nbmots" type="text"
                                                class="form-control @error('nbmots') is-invalid @enderror "
-                                               value="" placeholder="Nombre de mots" required>
+                                               value="{{ old('nbmots') }}" placeholder="Nombre de mots" required>
                                     </div>
                                 </div>
                             </div>
