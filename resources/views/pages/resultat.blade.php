@@ -53,60 +53,61 @@
 
                         <input type="hidden" name="idsimulation" value="{{ $simulation[0]->idsimulation }}">
                         <?php
-                        if($simulation[0]->qualite===3||$simulation[0]->qualite===4){
-                        if ($nombredefoisqualiteMax == 1) {
-                            if ($serv[0]->degrequalite === $qualiteMax) {
-                                echo '<div id="bestChoice"
-                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
-                                <h5 id="conseil">Nous vous recommandons cette solution !</h5>';
-                            } else {
-                                echo '<div
-                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
-                            }
-                        } elseif ($nombredefoisqualiteMax > 1) {
-                            if ($serv[0]->degrequalite === $qualiteMax && $serv[0]->coutmax != $prixMax) {
-                                echo '<div id="bestChoice"
-                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
-                                <h5 id="conseil">Notre recommandation !</h5>';
-                            } else {
-                                echo '<div
-                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
-                            }
-                        }
-                        }elseif($simulation[0]->qualite===1||$simulation[0]->qualite===2){
-                            if($nombredefoisPrixMin==1){
-                                if($serv[0]->coutmax==$prixMin){
+                        if ($simulation[0]->qualite === 3 || $simulation[0]->qualite === 4) {
+                            if ($nombredefoisqualiteMax == 1) {
+                                if ($serv[0]->degrequalite === $qualiteMax) {
                                     echo '<div id="bestChoice"
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
-                                <h5 id="conseil">Notre recommandation !</h5>';
-                                }else {
+                                <h5 id="conseil">Nous vous recommandons cette solution !</h5>';
+                                } else {
                                     echo '<div
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
                                 }
-                            }else{
-                                if($serv[0]->coutmax==$prixMin && $serv[0]->coutmin==$prixMinMin){
+                            } elseif ($nombredefoisqualiteMax > 1) {
+                                if ($serv[0]->degrequalite === $qualiteMax && $serv[0]->coutmax != $prixMax) {
                                     echo '<div id="bestChoice"
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
                                 <h5 id="conseil">Notre recommandation !</h5>';
-                                }else {
+                                } else {
+                                    echo '<div
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
+                                }
+                            }
+                        } elseif ($simulation[0]->qualite === 1 || $simulation[0]->qualite === 2) {
+                            if ($nombredefoisPrixMin == 1) {
+                                if ($serv[0]->coutmax == $prixMin) {
+                                    echo '<div id="bestChoice"
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
+                                <h5 id="conseil">Notre recommandation !</h5>';
+                                } else {
+                                    echo '<div
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
+                                }
+                            } else {
+                                if ($serv[0]->coutmax == $prixMin && $serv[0]->coutmin == $prixMinMin) {
+                                    echo '<div id="bestChoice"
+                            class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill ">
+                                <h5 id="conseil">Notre recommandation !</h5>';
+                                } else {
                                     echo '<div
                             class="d-flex justify-content-center flex-column list-group-item align-items-center border border-0 rounded-0 m-1 justify-content-center shadow p-4 mb-4 bg-white flex-fill">';
                                 }
                             }
                         }
                         ?>
-                        <h3 class="mb-2 mt-2">{{ $serv[0]->nomservice }} : </h3>
-                        <br>
-                        <p>{{ $serv[0]->detail }}</p>
-                        <br>
-                        <div class="block d-flex justify-content-center">
-                            <div class="rounded-pill bg-primary m-3 p-5">
-                                <h4 class="font-weight-bolder text-white text-center">Tarif estimé :</h4>
-                                <h4 class="font-weight-bolder text-white text-center">
-                                    entre {{ $serv[0]->coutmin * $simulation[0]->nbmots }}
-                                    et {{ $serv[0]->coutmax * $simulation[0]->nbmots }}€ HT</h4>
-                            </div>
+                        <div class="rounded-pill bg-primary m-3 p-5">
+                            <h3 class="mb-2 mt-2 font-weight-bolder text-white text-center"">{{ $serv[0]->nomservice }}
+                            : </h3>
+                            <br>
+                            <p class="font-weight-bolder text-white text-center"">{{ $serv[0]->detail }}</p>
                         </div>
+                        <br>
+                        <span class="small ">Tarif estimé :</span>
+                        <h5 class="font-weight-bolder ">
+                            <!--entre {{ $serv[0]->coutmin * $simulation[0]->nbmots }}
+                            et {{ $serv[0]->coutmax * $simulation[0]->nbmots }}€ HT par mot</h5>-->
+                                entre {{ $serv[0]->coutmin  }}
+                                et {{ $serv[0]->coutmax  }}€ HT par mot</h5>
                         <br>
                         <span class="small ">Délai estimé de livraison :</span>
                         <?php
