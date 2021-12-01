@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class service extends Model
 {
     use HasFactory;
+    protected $primaryKey = "idservice";
+    public $timestamps = true;
+    const UPDATED_AT = null;
 }

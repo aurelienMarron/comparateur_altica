@@ -2,8 +2,10 @@
 
 use App\Models\Langue as Langue;
 use App\Models\qualiteclient as Qualite;
+use App\Models\service as Service;
 
 $qualite=Qualite::find($simulation->qualite);
+$service=Service::find($simulation->idservice);
 $langue_source = Langue::find($simulation->langue_source);
 $langue_cible= Langue::find($simulation->langue_cible);
 ?>
@@ -28,6 +30,7 @@ $langue_cible= Langue::find($simulation->langue_cible);
     <li><strong>Qualité de traduction demandée</strong> : {{$qualite->besoinclient}}</li>
     <li><strong>Relecture demandée</strong> ? @if($simulation->bat===1) Oui
     @else Non</li>@endif
+    <li><strong>Service choisis après proposition des solutions</strong> : {{$service->nomservice}} = {{$service->detail}}</li>
     <li><strong>Langue source</strong> : {{$langue_source->langue}}</li>
     <li><strong>Langue cible</strong> : {{$langue_cible->langue}}</li>
 </ul>

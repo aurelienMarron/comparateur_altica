@@ -96,12 +96,14 @@ html, body {
     #langue_cible {
         margin-top: 0;
     }
+
     #rangeQualite {
         width: 60%;
         margin-left: 5%;
     }
+
     #sliderQualite {
-        width:50%;
+        width: 50%;
     }
 }
 
@@ -111,27 +113,23 @@ html, body {
     }
 }
 
-
 @media screen and (min-width: 1200px) {
     #rangeQualite {
         width: 60%;
         margin-left: 5%;
     }
+
     #sliderQualite {
-        width:40%;
+        width: 40%;
     }
 }
 
 @media screen and (max-width: 300px) {
-#sliderQualite{
-    font-size:10px;
-}
-}
-
-u{
-    text-decoration: #f00 wavy underline;
+    #sliderQualite {
+        font-size: 10px;
+    }
 }
 
-#arrondi{
-    width:100%;
+#arrondi {
+    width: 100%;
 }
