@@ -25,13 +25,6 @@
         <div class="flex-fill">
             @yield('content')
         </div>
-        {{--   {{ config('app.name') }}
-
-        @if(Route::is('home'))
-        <p>Bienvenue</p>
-        @endif
-
-        <img src="{{ asset('/images/img.png') }}" alt="img inexistante"> --}}
 
         <footer class=" d-flex flex-row justify-content-center ">
             <p class="text-center">

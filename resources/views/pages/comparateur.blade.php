@@ -9,7 +9,7 @@
 @section('content')
 
     @if($errors->any())
-        <div class="" alert alert-danger>
+        <div class="alert alert-danger" >
             <ul>
                 @foreach ($errors->all() as $error)
                     <li>{{$error}}</li>
@@ -134,7 +134,7 @@
                                 <div class="invalid-feedback">{{ $message }}</div>
                                 @enderror
                             </div>
-                    </div>
+
 
                     <div class="form-group m-2">
                         <h4>Options</h4>
@@ -161,6 +161,7 @@
         </div>
     </div>
     </div>
+
     <script type="text/javascript">
         function displayValue(val) {
             if (val === "1") {
@@ -175,11 +176,11 @@
         }
 
         function calculNbMots() {
-            var mots=document.getElementById('rawtext').value;
-                var nombre=0;
-                var split=mots.split(" ");
-                 for(var i=0; i<split.length;i++){
-                     if (split[i]!=""){
+            let mots=document.getElementById('rawtext').value;
+                let nombre=0;
+                let split=mots.split(" ");
+                 for(let i=0; i<split.length;i++){
+                     if (split[i]!==""){
                          nombre +=1;
                      }
                  }

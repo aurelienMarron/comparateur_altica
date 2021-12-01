@@ -103,10 +103,10 @@
                         <br>
                         <span class="small ">Tarif estimé par mot :</span>
                         <h5 class="font-weight-bolder ">
-                            <!--entre {{ $serv[0]->coutmin * $simulation[0]->nbmots }}
+                        <!--entre {{ $serv[0]->coutmin * $simulation[0]->nbmots }}
                             et {{ $serv[0]->coutmax * $simulation[0]->nbmots }}€ HT par mot</h5>-->
-                                entre {{ number_format($serv[0]->coutmin,2,',','')  }}
-                                et {{ number_format($serv[0]->coutmax,2,',','' ) }}€ HT</h5>
+                            entre {{ number_format($serv[0]->coutmin,2,',','')  }}
+                            et {{ number_format($serv[0]->coutmax,2,',','' ) }}€ HT</h5>
                         <br>
                         <span class="small ">Délai estimé de livraison :</span>
                         <?php
@@ -131,8 +131,9 @@
                             option
                         </button>
                         <input type="hidden" name="idservice" value="{{ $serv[0]->idservice }}">
+                    </form>
         </div>
-        </form>
+
     @endforeach
 
     <!-- <button class="list-group-item btn border border-0 active rounded-0 m-1 justify-content-center shadow p-4 mb-4 flex-fill">
@@ -140,13 +141,13 @@
             </button>-->
 
         </ul>
-
+        </div>
         <p class="d-flex justify-content-center text-secondary">
             N.B. : à titre indicatif, un traducteur traduit en moyenne 2 000 mots par jours <br>
             * relecture par un second linguiste, il est en effet difficile de détecter ses propres erreurs <br>
         </p>
 
     </div>
-    </div>
+
 
 @endsection

@@ -19,7 +19,6 @@ class ResultatController extends Controller
 
         $idqualite = $simulation[0]->qualite;
         $services = Recommandation::where('idqualite', $idqualite)->get();
-        //$services = DB::table('recommandations')->where('idqualite',$idqualite)->value('idservice');
         $service = array();
 
         foreach ($services as $val) {
@@ -65,20 +64,14 @@ class ResultatController extends Controller
     public function addContact(Request $request)
     {
         $validatedData = $request->validate([
-            //'contact_nom' => 'bail|alpha',
-            //'contact_prenom' => 'bail|alpha',
             'contact_email' => 'bail|required|email',
-            //'contact_telephone' => 'bail|numeric',
         ]);
 
         $contact = Contact::create(
             [
-                //'nom' => $validatedData['contact_nom'],
                 'nom' =>$request->input('contact_nom'),
-                //'prenom' => $validatedData['contact_prenom'],
                 'prenom'=>$request->input('contact_prenom'),
                 'mail' => $validatedData['contact_email'],
-                //'telephone' =>$validatedData['contact_telephone']
                 'telephone'=>$request->input('contact_telephone')
             ]);
 
