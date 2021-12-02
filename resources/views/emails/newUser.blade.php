@@ -35,7 +35,7 @@ $langue_cible= Langue::find($simulation->langue_cible);
     @else Non</li>@endif
     <li><strong>Langue source</strong> : {{$langue_source->langue}}</li>
     <li><strong>Langue cible</strong> : {{$langue_cible->langue}}</li>
-    <li><strong>Service choisis après proposition des solutions</strong> : {{$service->nomservice}} = {{$service->detail}}</li>
+    <li><strong>Service choisi après proposition des solutions</strong> : {{$service->nomservice}} = {{$service->detail}}</li>
 </ul>
 </body>
 </html>
